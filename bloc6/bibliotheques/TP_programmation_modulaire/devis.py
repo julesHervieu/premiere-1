@@ -1,4 +1,5 @@
 import geometrie
+import geometrie_triangle
 import math
 
 def nombre_pots(longueur, largeur, surface_couvrante):
@@ -11,7 +12,9 @@ def nombre_pots(longueur, largeur, surface_couvrante):
     pré-conditions : la longueur, la largeur et la surface_couvrante sont des valeurs strictement positives
     post-conditions : Néant
     """
-    pass
+    nb_pot = math.ceil(geometrie_triangle.aire(longueur,largeur) / surface_couvrante)
+    
+    return nb_pot
 
 def nombre_baches(longueur, largeur, surface_couvrante):
     """
@@ -23,7 +26,9 @@ def nombre_baches(longueur, largeur, surface_couvrante):
     pré-conditions : la longueur, la largeur et la surface_couvrante sont des valeurs strictement positives
     post-conditions : Néant
     """
-    pass
+    nb_baches = math.ceil(geometrie_triangle.aire(longueur,largeur) / surface_couvrante)
+    
+    return nb_baches
 
 def nombre_rubans(longueur, largeur, perimetre_couvrante):
     """
@@ -35,7 +40,7 @@ def nombre_rubans(longueur, largeur, perimetre_couvrante):
     pré-conditions : la longueur, la largeur et la perimetre_couvrante sont des valeurs strictement positives
     post-conditions : Néant
     """
-    pass
+    return math.ceil(geometrie_triangle.perimetre(longueur,largeur) / perimetre_couvrante)
 
 def salaire(longueur, largeur):
     """
@@ -46,7 +51,8 @@ def salaire(longueur, largeur):
     pré-conditions : la longueur, la largeur et la surface_couvrante sont des valeurs strictement positives
     post-conditions : Néant
     """
-    pass
+    resultat = geometrie_triangle.aire(longueur,largeur)
+    return resultat * 7.50
 
 def est_reparation_couverte(total_couts):
     """
